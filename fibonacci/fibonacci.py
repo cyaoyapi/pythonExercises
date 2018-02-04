@@ -5,6 +5,5 @@ a, b = 1, 1
 cpt = 1
 while cpt <= nb:
 	print(b, end=" ")
-	a, b = b, a+b
-	cpt += 1
+	a, b, cpt = b, a+b, cpt+1
 print("")
