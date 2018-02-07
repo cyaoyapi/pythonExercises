@@ -19,6 +19,26 @@ class Sentence:
 
 		return param_word in self.words
 
+	def __iter__(self):
+
+		return IterSentence(self.words)
+
+class IterSentence:
+
+	def __init__(self, param_words):
+
+		self.words = param_words[:]
+
+	def __iter__(self):
+
+		return self
+
+	def __next__(self):
+
+		if not self.words:
+			raise StopIteration
+		return self.words.pop()
+
 
 # Main program
 
@@ -26,3 +46,5 @@ my_sentence = Sentence("Thanks Lord Jesus-Christ . I'm happy to succed to this t
 print(my_sentence)
 print(len(my_sentence))
 print("Jesus-Christ." in my_sentence)
+for word in my_sentence:
+	print(f"{word}\n")
