@@ -21,9 +21,11 @@ class Sentence:
 
 	def __iter__(self):
 
-		return IterSentence(self.words)
+		#return IterSentence(self.words)
+		for word in self.words:
+			yield word
 
-class IterSentence:
+"""class IterSentence:
 
 	def __init__(self, param_words):
 
@@ -38,6 +40,7 @@ class IterSentence:
 		if not self.words:
 			raise StopIteration
 		return self.words.pop()
+"""
 
 
 # Main program
